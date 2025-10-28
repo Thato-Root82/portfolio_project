@@ -1,0 +1,421 @@
+:root {
+    --text-color: black;
+    --link-color: blue;
+    --background-color: white;
+}
+
+/* selects all elements  */
+* {
+    margin: 0;
+    padding: 0;
+    /*removes all default padding and margin from all elements */
+    box-sizing: border-box;
+    /*Changes how element dimensions are calculated to (width = content + padding + border) instead of (width + padding + border = total width) */
+}
+
+html {
+    scroll-behavior: smooth;
+
+    /* changes how the scroll effect looks  */
+}
+
+a {
+    color: var(--link-color);
+    /*changes the link color to blue*/
+    text-decoration: none;
+    /* removes the underline from links */
+}
+
+body {
+    font-family: poppins, sans-serif;
+    background-color: var(--background-color);
+    ;
+}
+
+/*navigation bar styling starts here */
+nav {
+    display: flex;
+    /* Turns the navigation into a flex container and makes contents in the navbar be in horizontal order*/
+    justify-content: space-between;
+    /*Space between items will be created and First item sticks to the left edge, last item sticks to the right edge*/
+    padding: 0px 50px;
+    /*moves the items from the edges NB:(Y-AXIS X-AXIS , SO 0 IS padding for top and bottom and 50 is for left and right )*/
+    height: 80 px;
+    align-items: center;
+    /* vertically centers the items in the navbar */
+    ;
+}
+
+.left {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.right {
+    margin: 0 10px;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.right a span {
+    margin-left: 5px;
+}
+
+.right a {
+    padding: 5px 15px;
+    color: black;
+}
+
+#btn_github,
+#btn_linkedin,
+#btn_email {
+    background-color: #F1F3F0;
+    border-radius: 7px;
+    text-align: center;
+    padding: 5px 15px;
+    border: none;
+    margin-left: 30px;
+    margin-bottom: 10px;
+}
+
+#btn_github,
+#btn_linkedin,
+#btn_email {
+    transition: transform 0.5s ease-out;
+    /*(transition:) Smoothly returns to normal when mouse leaves rather than (animation :)*/
+}
+
+#btn_github:hover,
+#btn_linkedin:hover,
+#btn_email:hover {
+    transform: scale(1.2);
+    background-color: #C0C0C0;
+}
+
+/*to make my website responsive*/
+@media(max-width:797px)
+
+/*This will be applied when the width of the screen is 728px or less */
+    {
+    nav {
+        padding: 0 20px;
+    }
+
+    .right a span {
+        display: none;
+        /*remove text and leave the buttons only */
+    }
+
+    .right a {
+        font-size: 16px;
+    }
+
+    .left {
+
+        font-size: 16px;
+    }
+
+    img {
+        width: 200px;
+        height: auto;
+    }
+}
+
+@media(max-width:516px) {
+    nav {
+        padding: 0 6px;
+    }
+
+    .right a {
+        font-size: 10px;
+    }
+
+    .left {
+
+        font-size: 12px;
+    }
+
+    img {
+        width: 80px;
+        height: auto;
+    }
+
+    .HERO {
+        flex-direction: column-reverse;
+        /*moves the image to the top making the website more mobile friendly*/
+    }
+}
+
+.HERO {
+    display: flex;
+    align-items: center;
+    /*align the description with my image*/
+    justify-content: space-between;
+    padding: 0 50px;
+    /*added padding to the x-axis to move the image away from the edge*/
+    margin: 50px 0;
+    /*spacing between the following section and navbar*/
+    gap: 40px;
+    /*gap between the image and description*/
+}
+
+.HERO .left-hero {
+    flex: 5;
+    /*ratio 5 out of 7(2+5) */
+}
+
+.HERO .right-hero {
+    flex: 2;
+    /*ratio 2 out of 7(2+5) */
+    display: flex;
+    justify-content: right;
+    /*aligns image with the navbar*/
+
+}
+
+.HERO .left-hero h2 {
+    font-size: 35px;
+}
+
+.HERO .right-hero img {
+    width: 350px;
+    height: auto;
+    border-radius: 48%;
+}
+
+.HERO .left-hero .links {
+    margin-top: 25px;
+}
+
+.HERO .left-hero .links a {
+    display: inline-block;
+    /*when the width get smaller the icon and text wont separate from each other */
+    padding: 5px 10px;
+    border: 2px solid var(--link-color);
+    border-radius: 7px;
+    margin-right: 20px;
+    /*space between links*/
+    margin-bottom: 18px;
+    /*space between rows when the screen get smaller*/
+    transition: transform 0.5s ease-out;
+}
+
+.HERO .left-hero .links a:hover {
+    transform: scale(1.2);
+    background-color: var(--link-color);
+    color: white;
+}
+
+/*styling skills section starts here*/
+#SKILLS {
+    padding: 0 50px;
+    margin-bottom: 100px;
+
+}
+
+#SKILLS h2 {
+    font-size: 35px;
+    text-align: center;
+}
+
+#SKILLS .SkillsDescription {
+    font-size: 28px;
+    text-align: center;
+}
+
+#SKILLS .cells {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/*makes the logos to be in a straight line and wrap if the screen size is getting smaller */
+#SKILLS .cells .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    padding: 10px 20px;
+    border: 1px solid;
+    margin: 10px;
+    gap: 9px;
+    /*adds space between the logos and text*/
+
+}
+#SKILLS .cells .cell {
+    cursor: pointer;
+    transition: transform 0.3s ease-out; 
+    transform: translateY(7px); /* Initial state */
+}
+
+#SKILLS .cells .cell:hover {
+    transform: translateY(0px); /* Hover state */
+    border-color: var(--link-color);
+    
+}
+
+#SKILLS .cells .cell img {
+    width: 49px;
+    height: auto;
+}
+
+#SKILLS .cells .cell span {
+    font-size: 18px;
+}
+
+/*to make my website responsive*/
+@media(max-width:797px)
+
+/*This will be applied when the width of the screen is 728px or less */
+    {
+    #SKILLS {
+        padding: 0 30px;
+
+    }
+
+    #SKILLS .cells .cell span {
+        font-size: 14px;
+    }
+}
+
+@media(max-width:516px) {
+    #SKILLS {
+        padding: 0 10px;
+
+    }
+
+    #SKILLS .cells .cell span {
+        font-size: 10px;
+    }
+}
+
+/*Projects section here */
+.project-card {
+    height: auto;
+    width: 400px;
+    background-color: #2A3439;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    /* Keeps everything inside rounded corners */
+    margin: 20px;
+    /* Space around each sneaker card */
+
+}
+
+#PROJECTS {
+    padding: 0 50px;
+    margin-bottom: 100px;
+
+}
+
+#PROJECTS h2 {
+    font-size: 35px;
+    text-align: center;
+}
+
+.project-card {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.project-card img {
+    width: auto;
+
+    object-fit: contain;
+    /* Crops image to fit */
+    background-color: #fff;
+    /* White background behind shoe */
+}
+
+.project-name {
+
+    color: white;
+    font-size: 25px;
+
+}
+
+.project-info {
+    padding: 15px;
+}
+
+.project-description {
+    margin: 8px 0;
+    color: white;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.project-btn {
+    background-color: black;
+    border-radius: 7px;
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 15px 35px;
+    border: none;
+    transition: transform 0.5s ease-out;/*animation on the buttons on project cards*/
+}
+
+.project-btns {
+    order: 1;
+
+    margin-bottom: 30px;
+    padding: 20px;
+    margin: 8px 0;
+}
+.project-btn a {
+    color: white;
+}
+
+
+.project-btn:hover {
+    transform: scale(1.2);
+    background-color:#848482;
+
+}
+
+
+
+
+
+.made-with {
+
+    order: 2;
+    margin-bottom: 30px;
+
+
+}
+
+.made-with img {
+    width: 45px;
+    height: 60px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 9px;
+}
+
+
+.btns_and_icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media(max-width:797px) {
+    #PROJECTS {
+        padding: 0 25px;
+
+    }
+}
+
+@media(max-width:516px) {
+    #PROJECTS {
+        padding: 0 10px;
+
+    }
+}
+
