@@ -242,16 +242,19 @@ nav {
     /*adds space between the logos and text*/
 
 }
+
 #SKILLS .cells .cell {
     cursor: pointer;
-    transition: transform 0.3s ease-out; 
-    transform: translateY(7px); /* Initial state */
+    transition: transform 0.3s ease-out;
+    transform: translateY(7px);
+    /* Initial state */
 }
 
 #SKILLS .cells .cell:hover {
-    transform: translateY(0px); /* Hover state */
+    transform: translateY(0px);
+    /* Hover state */
     border-color: var(--link-color);
-    
+
 }
 
 #SKILLS .cells .cell img {
@@ -319,11 +322,13 @@ nav {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
+    width: 70%;
+    margin: auto;
+    margin-top: 25px;
 }
 
 .project-card img {
-    width: auto;
+    width: 100%;
 
     object-fit: contain;
     /* Crops image to fit */
@@ -334,19 +339,28 @@ nav {
 .project-name {
 
     color: white;
-    font-size: 25px;
+    font-size: 35px;
+    text-align: center;
 
 }
 
 .project-info {
-    padding: 15px;
+    padding: 6px;
 }
 
 .project-description {
     margin: 8px 0;
     color: white;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.4;
+    text-align: center;
+    margin: auto;
+}
+
+.btns_and_icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .project-btn {
@@ -355,9 +369,10 @@ nav {
     text-align: center;
     margin-left: 30px;
     margin-right: 30px;
-    padding: 15px 35px;
+    padding: 17px 39px;
     border: none;
-    transition: transform 0.5s ease-out;/*animation on the buttons on project cards*/
+    transition: transform 0.5s ease-out;
+    /*animation on the buttons on project cards*/
 }
 
 .project-btns {
@@ -367,6 +382,7 @@ nav {
     padding: 20px;
     margin: 8px 0;
 }
+
 .project-btn a {
     color: white;
 }
@@ -374,7 +390,7 @@ nav {
 
 .project-btn:hover {
     transform: scale(1.2);
-    background-color:#848482;
+    background-color: #848482;
 
 }
 
@@ -393,23 +409,26 @@ nav {
 .made-with img {
     width: 45px;
     height: 60px;
-    margin-right: 10px;
+    margin-right: 7px;
     border: none;
     border-radius: 9px;
 }
 
 
-.btns_and_icons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 @media(max-width:797px) {
     #PROJECTS {
         padding: 0 25px;
 
     }
+
+    .project-description {
+
+        font-size: 12px;
+
+    }
+
 }
 
 @media(max-width:516px) {
@@ -417,5 +436,23 @@ nav {
         padding: 0 10px;
 
     }
+
+    .project-description {
+
+        font-size: 10px;
+
+    }
+
+
 }
 
+@media(max-width:644px) {
+    .project-btns {
+        margin-left: 50%;
+        margin-right: 50%;
+    }
+
+    .project-btn {
+        margin-bottom: 20px;
+    }
+}
